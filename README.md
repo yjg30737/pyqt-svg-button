@@ -1,5 +1,9 @@
 # pyqt-svg-icon-pushbutton
-PyQt QPushButton which user can set svg icon (not a low quality)
+PyQt ```QPushButton``` which user can set svg icon(not a low quality). 
+
+I have to say that ```setIcon``` of ```QPushButton``` doensn't help that much in terms of setting SVG image as an icon. It's just another good old fashioned pixmap icon. 
+
+So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS. 
 
 ## Requirements
 * PyQt5 >= 5.8
