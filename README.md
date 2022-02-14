@@ -63,3 +63,5 @@ Sorry for the video quality.
 ![image](https://user-images.githubusercontent.com/55078043/153802633-5517f7ac-3d86-4d7f-b2de-40dbc10a19f8.png)
 
 Image quality is not perfect, but much better than video. Above image is slightly bigger than actual size.
+
+I wish i know how to resize the video and image which are dropped on the README.md.
