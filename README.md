@@ -7,6 +7,9 @@ PyQt QPushButton which user can set svg icon (not a low quality)
 ## Setup
 ```pip3 install git+https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git --upgrade```
 
+## Usage
+* ```setIcon(icon: str)``` to set the icon. Icon should be a SVG file's name. This is overriding method.
+
 ## Example
 Code Sample
 ```python
