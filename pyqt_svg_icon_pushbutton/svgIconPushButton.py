@@ -57,7 +57,6 @@ class SvgIconPushButton(QPushButton):
             effect.setColor(QColor(255, 255, 255))
             if self.isEnabled():
                 effect.setStrength(0)
-                self.setGraphicsEffect(effect)
             else:
                 effect.setStrength(0.5)
             self.setGraphicsEffect(effect)
