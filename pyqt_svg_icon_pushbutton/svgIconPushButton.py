@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QPushButton, qApp
+from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect
 
 
 class SvgIconPushButton(QPushButton):
@@ -47,3 +48,17 @@ class SvgIconPushButton(QPushButton):
     def setIcon(self, icon: str):
         self.__icon = icon
         self.__styleInit()
+
+    # to change grayscale
+    def event(self, e):
+        # change to enabled state
+        if e.type() == 98:
+            effect = QGraphicsColorizeEffect()
+            effect.setColor(QColor(255, 255, 255))
+            if self.isEnabled():
+                effect.setStrength(0)
+                self.setGraphicsEffect(effect)
+            else:
+                effect.setStrength(0.5)
+            self.setGraphicsEffect(effect)
+        return super().event(e)
