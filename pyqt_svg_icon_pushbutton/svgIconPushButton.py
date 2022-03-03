@@ -1,3 +1,5 @@
+import os, inspect, sys
+
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect
 
@@ -46,7 +48,8 @@ class SvgIconPushButton(QPushButton):
         self.setStyleSheet(self.__btn_style)
 
     def setIcon(self, icon: str):
-        self.__icon = icon
+        caller_path = os.path.dirname(inspect.getframeinfo(sys._getframe(1)).filename)
+        self.__icon = os.path.join(caller_path, icon).replace('\\', '/')
         self.__styleInit()
 
     # to change grayscale
