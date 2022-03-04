@@ -7,7 +7,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
-    description='PyQt QPushButton which user can set svg icon (not a low quality)',
+    description='PyQt QPushButton which user can set svg icon (not a fake low quality svg icon)',
     url='https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git',
     install_requires=[
         'PyQt5>=5.8',
