@@ -48,7 +48,15 @@ class SvgIconPushButton(QPushButton):
         self.setStyleSheet(self.__btn_style)
 
     def setIcon(self, icon: str):
-        caller_path = os.path.dirname(inspect.getframeinfo(sys._getframe(1)).filename)
+        stack_lst = inspect.stack()
+        ico_frame_idx = 0
+        for i in range(len(stack_lst)):
+            context = stack_lst[i].code_context[0]
+            if context.find(icon) == -1:
+                pass
+            else:
+                ico_frame_idx = i
+        caller_path = os.path.dirname(stack_lst[ico_frame_idx].filename)
         self.__icon = os.path.join(caller_path, icon).replace('\\', '/')
         self.__styleInit()
 
