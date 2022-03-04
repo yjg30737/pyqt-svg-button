@@ -1,4 +1,4 @@
-import os, inspect, sys
+import os, inspect
 
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect
