@@ -20,15 +20,17 @@ class SvgIconPushButton(QPushButton):
             self.__baseWidget = base_widget
             self.__baseWidget.installEventFilter(self)
             self.__baseWidget.setObjectName('base_widget')
-
-            base_color = self.__baseWidget.palette().color(QPalette.Base)
-            self.__hover_color = base_color.lighter(150).name()
-            self.__pressed_color = base_color.lighter(200).name()
-            self.__checked_color = base_color.lighter(100).name()
+            self.__initColorByBaseWidget()
         else:
             self.__hover_color = '#DDDDDD'
             self.__pressed_color = '#FFFFFF'
             self.__checked_color = '#CCCCCC'
+
+    def __initColorByBaseWidget(self):
+        base_color = self.__baseWidget.palette().color(QPalette.Base)
+        self.__hover_color = base_color.lighter(150).name()
+        self.__pressed_color = base_color.lighter(200).name()
+        self.__checked_color = base_color.lighter(100).name()
 
     def __styleInit(self):
         self.__btn_style = f'''
@@ -82,9 +84,6 @@ class SvgIconPushButton(QPushButton):
         if obj.objectName() == 'base_widget':
             # catch the StyleChange event of base widget
             if e.type() == 100:
-                base_color = self.__baseWidget.palette().color(QPalette.Base)
-                self.__hover_color = base_color.lighter(150).name()
-                self.__pressed_color = base_color.lighter(200).name()
-                self.__checked_color = base_color.lighter(100).name()
+                self.__initColorByBaseWidget()
                 self.__styleInit()
         return super().eventFilter(obj, e)
