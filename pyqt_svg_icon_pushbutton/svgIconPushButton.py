@@ -1,21 +1,28 @@
 import os, inspect
 
-from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect
+from PyQt5.QtGui import QColor, QPalette
+from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect, QWidget
 from python_get_absolute_resource_path.getAbsoulteResourcePath import get_absolute_resource_path
 
 
 class SvgIconPushButton(QPushButton):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, base_widget: QWidget = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.__initVal()
+        self.__initVal(base_widget)
         self.__styleInit()
 
-    def __initVal(self):
+    def __initVal(self, base_widget):
         font = qApp.font()
         self.__size = font.pointSize() * 2
-        self.__padding = self.__border_radius = self.__size // 9
+        self.__padding = self.__border_radius = self.__size // 10
         self.__icon = ''
+        if base_widget:
+            base_color = base_widget.palette().color(QPalette.Base)
+            self.__hover_color = base_color.lighter(100).name()
+            self.__pressed_color = base_color.lighter(100).name()
+        else:
+            self.__hover_color = '#DDDDDD'
+            self.__pressed_color = '#FFFFFF'
 
     def __styleInit(self):
         self.__btn_style = f'''
@@ -30,12 +37,12 @@ class SvgIconPushButton(QPushButton):
         }}
         QPushButton:hover
         {{
-        background-color:#DDDDDD;
+        background-color: {self.__hover_color};
         border-radius: {self.__border_radius};
         }}
         QPushButton:pressed
         {{
-        background-color:#FFFFFF;
+        background-color: {self.__pressed_color};
         border-radius: {self.__border_radius};
         }}
         QPushButton:checked
