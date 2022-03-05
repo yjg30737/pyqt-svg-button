@@ -16,6 +16,7 @@ class SvgIconPushButton(QPushButton):
         self.__size = font.pointSize() * 2
         self.__padding = self.__border_radius = self.__size // 10
         self.__icon = ''
+        self.installEventFilter(self)
         if base_widget:
             self.__baseWidget = base_widget
             self.__baseWidget.installEventFilter(self)
@@ -67,20 +68,23 @@ class SvgIconPushButton(QPushButton):
         self.__icon = get_absolute_resource_path(icon)
         self.__styleInit()
 
-    # to change grayscale
     def event(self, e):
-        # change to enabled state
-        if e.type() == 98:
-            effect = QGraphicsColorizeEffect()
-            effect.setColor(QColor(255, 255, 255))
-            if self.isEnabled():
-                effect.setStrength(0)
-            else:
-                effect.setStrength(0.5)
-            self.setGraphicsEffect(effect)
         return super().event(e)
 
     def eventFilter(self, obj, e):
+        if obj == self:
+            # to change grayscale when button gets disabled
+            # if button get enabled/disabled EnableChange will emit
+            # so catch the EnabledChange
+            if e.type() == 98:
+                # change to enabled state
+                effect = QGraphicsColorizeEffect()
+                effect.setColor(QColor(255, 255, 255))
+                if self.isEnabled():
+                    effect.setStrength(0)
+                else:
+                    effect.setStrength(0.5)
+                self.setGraphicsEffect(effect)
         if obj.objectName() == 'base_widget':
             # catch the StyleChange event of base widget
             if e.type() == 100:
