@@ -17,7 +17,11 @@ class SvgIconPushButton(QPushButton):
         self.__padding = self.__border_radius = self.__size // 10
         self.__icon = ''
         if base_widget:
-            base_color = base_widget.palette().color(QPalette.Base)
+            self.__baseWidget = base_widget
+            self.__baseWidget.installEventFilter(self)
+            self.__baseWidget.setObjectName('base_widget')
+
+            base_color = self.__baseWidget.palette().color(QPalette.Base)
             self.__hover_color = base_color.lighter(150).name()
             self.__pressed_color = base_color.lighter(200).name()
             self.__checked_color = base_color.lighter(100).name()
@@ -73,3 +77,14 @@ class SvgIconPushButton(QPushButton):
                 effect.setStrength(0.5)
             self.setGraphicsEffect(effect)
         return super().event(e)
+
+    def eventFilter(self, obj, e):
+        if obj.objectName() == 'base_widget':
+            # catch the StyleChange event of base widget
+            if e.type() == 100:
+                base_color = self.__baseWidget.palette().color(QPalette.Base)
+                self.__hover_color = base_color.lighter(150).name()
+                self.__pressed_color = base_color.lighter(200).name()
+                self.__checked_color = base_color.lighter(100).name()
+                self.__styleInit()
+        return super().eventFilter(obj, e)
