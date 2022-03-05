@@ -1,5 +1,3 @@
-import os, inspect
-
 from PyQt5.QtGui import QColor, QPalette
 from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect, QWidget
 from python_get_absolute_resource_path.getAbsoulteResourcePath import get_absolute_resource_path
