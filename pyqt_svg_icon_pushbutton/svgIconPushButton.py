@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QColor, QPalette
-from PyQt5.QtWidgets import QPushButton, qApp, QGraphicsColorizeEffect, QWidget
+from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget
 from python_get_absolute_resource_path.getAbsoulteResourcePath import get_absolute_resource_path
 
 
@@ -10,8 +10,7 @@ class SvgIconPushButton(QPushButton):
         self.__styleInit()
 
     def __initVal(self, base_widget):
-        font = qApp.font()
-        self.__size = font.pointSize() * 2
+        self.__size = self.font().pointSize() * 2
         self.__padding = self.__border_radius = self.__size // 10
         self.__icon = ''
         self.installEventFilter(self)
