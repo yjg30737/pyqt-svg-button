@@ -12,6 +12,7 @@ So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS.
 ```pip3 install git+https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git --upgrade```
 
 ## Usage
+* ```SvgIconPushButton(base_widget: QWidget = None)``` - Constructor. Base widget is the widget that the button's background color based of when button get hovered/pressed by mouse cursor.
 * ```setIcon(icon: str)``` to set the icon. Icon should be a SVG file's name. This is overriding method.
 
 ## Included Packages
