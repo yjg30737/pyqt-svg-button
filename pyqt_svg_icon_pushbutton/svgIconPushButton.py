@@ -18,11 +18,13 @@ class SvgIconPushButton(QPushButton):
         self.__icon = ''
         if base_widget:
             base_color = base_widget.palette().color(QPalette.Base)
-            self.__hover_color = base_color.lighter(100).name()
-            self.__pressed_color = base_color.lighter(100).name()
+            self.__hover_color = base_color.lighter(150).name()
+            self.__pressed_color = base_color.lighter(200).name()
+            self.__checked_color = base_color.lighter(100).name()
         else:
             self.__hover_color = '#DDDDDD'
             self.__pressed_color = '#FFFFFF'
+            self.__checked_color = '#CCCCCC'
 
     def __styleInit(self):
         self.__btn_style = f'''
@@ -47,7 +49,7 @@ class SvgIconPushButton(QPushButton):
         }}
         QPushButton:checked
         {{
-        background-color: rgb(210, 210, 210);
+        background-color: {self.__checked_color};
         border-radius: {self.__border_radius};
         border: none;
         }}
