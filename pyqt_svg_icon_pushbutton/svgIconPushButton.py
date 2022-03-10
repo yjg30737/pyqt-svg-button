@@ -27,13 +27,13 @@ class SvgIconPushButton(QPushButton):
     def __initColorByBaseWidget(self):
         base_color = self.__baseWidget.palette().color(QPalette.Base)
         if base_color.name() == '#ffffff':
-            self.__hover_color = base_color.darker(110).name()
-            self.__pressed_color = base_color.darker(130).name()
-            self.__checked_color = base_color.darker(120).name()
+            self.__hover_color = base_color.darker(120).name()
+            self.__pressed_color = base_color.darker(140).name()
+            self.__checked_color = base_color.darker(130).name()
         else:
-            self.__hover_color = base_color.lighter(110).name()
-            self.__pressed_color = base_color.lighter(130).name()
-            self.__checked_color = base_color.lighter(120).name()
+            self.__hover_color = base_color.lighter(120).name()
+            self.__pressed_color = base_color.lighter(140).name()
+            self.__checked_color = base_color.lighter(130).name()
 
     def __styleInit(self):
         self.__btn_style = f'''
