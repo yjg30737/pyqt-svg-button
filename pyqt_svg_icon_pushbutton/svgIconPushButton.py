@@ -96,3 +96,7 @@ class SvgIconPushButton(QPushButton):
                 self.__initColorByBaseWidget()
                 self.__styleInit()
         return super().eventFilter(obj, e)
+
+    def setPadding(self, padding: int):
+        self.__padding = padding
+        self.__styleInit()
