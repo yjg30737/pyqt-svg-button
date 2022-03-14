@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyqt-svg-icon-pushbutton',
-    version='0.6.0',
+    version='0.7.0',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
     license='MIT',
