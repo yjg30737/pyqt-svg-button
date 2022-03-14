@@ -68,6 +68,7 @@ class SvgIconPushButton(QPushButton):
         '''
 
         self.setStyleSheet(self.__btn_style)
+        self.setFixedSize(self.sizeHint().width(), self.sizeHint().height())
 
     def setIcon(self, icon: str):
         self.__icon = get_absolute_resource_path(icon)
