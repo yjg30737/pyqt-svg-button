@@ -89,7 +89,8 @@ class SvgIconPushButton(QPushButton):
                 if self.isEnabled():
                     effect.setStrength(0)
                 else:
-                    effect.setStrength(0.5)
+                    effect.setStrength(1)
+                    effect.setColor(QColor(0, 0, 0))
                 self.setGraphicsEffect(effect)
         if obj.objectName() == 'base_widget':
             # catch the StyleChange event of base widget
