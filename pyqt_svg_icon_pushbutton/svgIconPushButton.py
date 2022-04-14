@@ -1,7 +1,6 @@
 from PyQt5.QtGui import QColor, QPalette, qGray
 from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget
 from python_get_absolute_resource_path.getAbsoulteResourcePath import get_absolute_resource_path
-from python_color_getter.pythonColorGetter import PythonColorGetter
 
 
 class SvgIconPushButton(QPushButton):
