@@ -21,6 +21,6 @@ setup(
     long_description=long_description,
     install_requires=[
         'PyQt5>=5.8',
-        'python-get-absolute-resource-path @ git+https://git@github.com/yjg30737/python-get-absolute-resource-path.git@main'
+        'python-get-absolute-resource-path>=0.0.1'
     ]
 )
