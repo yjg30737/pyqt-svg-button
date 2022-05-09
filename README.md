@@ -9,7 +9,7 @@ So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS.
 * PyQt5 >= 5.8
 
 ## Setup
-```pip3 install git+https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git --upgrade```
+`python -m pip install pyqt-svg-icon-pushbutton`
 
 ## Usage
 * ```SvgIconPushButton(base_widget: QWidget = None)``` - Constructor. Base widget is the widget that the button's background color based of when button get hovered/pressed by mouse cursor. If value is default(```None```), background color of button which is getting hovered/pressed will set to #DDDDDD, #FFFFFF. 
