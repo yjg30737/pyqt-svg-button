@@ -16,7 +16,7 @@ So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS.
 * ```setIcon(icon: str)``` to set the icon. Icon should be a SVG file's name. This is overriding method.
 
 ## Included Packages
-* <a href="https://github.com/yjg30737/python-get-absolute-resource-path.git">python-get-absolute-resource-path</a>
+* <a href="https://github.com/yjg30737/absresgetter.git">absresgetter</a>
 
 ## Example
 Code Sample
