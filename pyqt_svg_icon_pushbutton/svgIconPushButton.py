@@ -1,6 +1,6 @@
 from PyQt5.QtGui import QColor, QPalette, qGray
 from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget
-from python_get_absolute_resource_path.getAbsoulteResourcePath import get_absolute_resource_path
+import absresgetter
 
 
 class SvgIconPushButton(QPushButton):
@@ -86,7 +86,7 @@ class SvgIconPushButton(QPushButton):
         self.setFixedSize(self.sizeHint().width(), self.sizeHint().height())
 
     def setIcon(self, icon: str):
-        self.__icon = get_absolute_resource_path(icon)
+        self.__icon = absresgetter.getabsres(icon)
         self.__styleInit()
 
     def event(self, e):

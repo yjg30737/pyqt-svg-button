@@ -21,6 +21,6 @@ setup(
     long_description=long_description,
     install_requires=[
         'PyQt5>=5.8',
-        'python-get-absolute-resource-path>=0.0.1'
+        'absresgetter>=0.0.1'
     ]
 )

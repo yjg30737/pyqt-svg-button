@@ -1,1 +1,1 @@
-python-get-absolute-resource-path>=0.0.1
+absresgetter>=0.0.1
