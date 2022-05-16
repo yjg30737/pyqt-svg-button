@@ -90,9 +90,6 @@ class SvgIconPushButton(QPushButton):
         self.__icon = absresgetter.getabsres(icon)
         self.__styleInit()
 
-    def event(self, e):
-        return super().event(e)
-
     def eventFilter(self, obj, e):
         if obj == self:
             # to change grayscale when button gets disabled
