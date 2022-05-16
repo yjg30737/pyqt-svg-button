@@ -117,3 +117,7 @@ class SvgIconPushButton(QPushButton):
     def setPadding(self, padding: int):
         self.__padding = padding
         self.__styleInit()
+
+    def setBorderRadius(self, border_radius: int):
+        self.__border_radius = border_radius
+        self.__styleInit()
