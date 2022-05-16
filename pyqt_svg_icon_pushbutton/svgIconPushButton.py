@@ -12,6 +12,7 @@ class SvgIconPushButton(QPushButton):
     def __initVal(self, base_widget):
         self.__size = self.font().pointSize() * 2
         self.__padding = self.__border_radius = self.__size // 10
+        self.__background = 'transparent'
         self.__icon = ''
         self.installEventFilter(self)
         if base_widget:
@@ -61,23 +62,21 @@ class SvgIconPushButton(QPushButton):
         width: {self.__size};
         height: {self.__size};
         image: url({self.__icon});
-        background: transparent;
+        background-color: {self.__background};
+        border-radius: {self.__border_radius};
         padding: {self.__padding};
         }}
         QPushButton:hover
         {{
         background-color: {self.__hover_color};
-        border-radius: {self.__border_radius};
         }}
         QPushButton:pressed
         {{
         background-color: {self.__pressed_color};
-        border-radius: {self.__border_radius};
         }}
         QPushButton:checked
         {{
         background-color: {self.__checked_color};
-        border-radius: {self.__border_radius};
         border: none;
         }}
         '''
@@ -120,4 +119,8 @@ class SvgIconPushButton(QPushButton):
 
     def setBorderRadius(self, border_radius: int):
         self.__border_radius = border_radius
+        self.__styleInit()
+
+    def setBackground(self, background):
+        self.__background = background
         self.__styleInit()
