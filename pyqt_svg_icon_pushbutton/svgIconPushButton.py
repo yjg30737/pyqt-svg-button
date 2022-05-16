@@ -1,5 +1,6 @@
-from PyQt5.QtGui import QColor, QPalette, qGray
-from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget
+from PyQt5.QtCore import QPropertyAnimation, QAbstractAnimation
+from PyQt5.QtGui import QColor, QPalette, QBrush, qGray
+from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget, QGraphicsOpacityEffect
 import absresgetter
 
 
@@ -12,8 +13,9 @@ class SvgIconPushButton(QPushButton):
     def __initVal(self, base_widget):
         self.__size = self.font().pointSize() * 2
         self.__padding = self.__border_radius = self.__size // 10
-        self.__background = 'transparent'
+        self.__background_color = 'transparent'
         self.__icon = ''
+        self.__animation = ''
         self.installEventFilter(self)
         if base_widget:
             self.__baseWidget = base_widget
@@ -26,10 +28,10 @@ class SvgIconPushButton(QPushButton):
             self.__checked_color = '#CCCCCC'
 
     def __initColorByBaseWidget(self):
-        base_color = self.__baseWidget.palette().color(QPalette.Base)
-        self.__hover_color = self.__getHoverColor(base_color)
-        self.__pressed_color = self.__getPressedColor(base_color)
-        self.__checked_color = self.__getPressedColor(base_color)
+        self.__base_color = self.__baseWidget.palette().color(QPalette.Base)
+        self.__hover_color = self.__getHoverColor(self.__base_color)
+        self.__pressed_color = self.__getPressedColor(self.__base_color)
+        self.__checked_color = self.__getPressedColor(self.__base_color)
 
     def __getColorByFactor(self, base_color, factor):
         r, g, b = base_color.red(), base_color.green(), base_color.blue()
@@ -62,7 +64,7 @@ class SvgIconPushButton(QPushButton):
         width: {self.__size};
         height: {self.__size};
         image: url({self.__icon});
-        background-color: {self.__background};
+        background-color: {self.__background_color};
         border-radius: {self.__border_radius};
         padding: {self.__padding};
         }}
@@ -121,8 +123,11 @@ class SvgIconPushButton(QPushButton):
         self.__border_radius = border_radius
         self.__styleInit()
 
-    def setBackground(self, background):
-        self.__background = background
+    def setBackground(self, background=None):
+        if background:
+            self.__background_color = background
+        else:
+            self.__background_color = self.__base_color.name()
         self.__styleInit()
 
     def setAsCircle(self):
