@@ -124,3 +124,7 @@ class SvgIconPushButton(QPushButton):
     def setBackground(self, background):
         self.__background = background
         self.__styleInit()
+
+    def setAsCircle(self):
+        self.setBorderRadius(self.height() // 2)
+        self.__styleInit()
