@@ -13,10 +13,11 @@ So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS.
 
 ## Usage
 * `SvgIconPushButton(base_widget: QWidget = None)` - Constructor. Base widget is the widget that the button's background color based of when button get hovered/pressed by mouse cursor. If value is default(`None`), background color of button which is getting hovered/pressed will set to #DDDDDD, #FFFFFF. 
-* `setIcon(icon: str)` to set the icon. Icon should be a SVG file's name. This is overriding method.
+* `setIcon(icon: str)` - set the icon. Icon should be a SVG file's name. This is overriding method.
 * `setPadding(padding: int)` - set the button's padding.
 * `setBorderRadius(border_radius: int)`
 * `setBackground(background)` - you can give `background` argument's value either 'transparent' or 6-digits or 3-digits hex color string or color's name like 'red', 'green'.
+* `setAsCircle()` - set button's shape as circle.
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/absresgetter.git">absresgetter</a>
