@@ -1,9 +1,9 @@
-# pyqt-svg-icon-pushbutton
-PyQt ```QPushButton``` which user can set svg icon(not a low quality). 
+# pyqt-svg-button
+PyQt button which user can set svg icon(not a low quality). 
 
-I have to say that ```setIcon``` of ```QPushButton``` doensn't help that much in terms of setting SVG image as an icon. It's just another good old fashioned pixmap icon. 
+Qt's `setIcon` of button widget doesn't help that much in terms of setting SVG image as an icon. It's just another good old fashioned pixmap icon. 
 
-So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS. 
+So i overrided the method to set SVG icon with the power of CSS. 
 
 ## Requirements
 * PyQt5 >= 5.8
@@ -12,7 +12,7 @@ So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS.
 `python -m pip install pyqt-svg-icon-pushbutton`
 
 ## Usage
-* `SvgIconPushButton(base_widget: QWidget = None)` - Constructor. Base widget is the widget that the button's background color based of when button get hovered/pressed by mouse cursor. If value is default(`None`), background color of button which is getting hovered/pressed will set to #DDDDDD, #FFFFFF. 
+* `SvgButton(base_widget: QWidget = None)` - Constructor. Base widget is the widget that the button's background color based of when button get hovered/pressed by mouse cursor. If value is default(`None`), background color of button which is getting hovered/pressed will set to #DDDDDD, #FFFFFF. 
 * `setIcon(icon: str)` - set the icon. Icon should be a SVG file's name. This is overriding method.
 * `setPadding(padding: int)` - set the button's padding.
 * `setBorderRadius(border_radius: int)`
@@ -27,22 +27,22 @@ Code Sample
 ```python
 from PyQt5.QtWidgets import QWidget, QApplication, QHBoxLayout
 
-from pyqt_svg_icon_pushbutton.svgIconPushButton import SvgIconPushButton
+from pyqt_svg_button.svgButton import SvgButton
 
 
-class SvgIconPushButtonExample(QWidget):
+class SvgButtonExample(QWidget):
     def __init__(self):
         super().__init__()
         self.__initUi()
 
     def __initUi(self):
-        newButton = SvgIconPushButton()
+        newButton = SvgButton()
         newButton.setIcon('new.svg')
 
-        openButton = SvgIconPushButton()
+        openButton = SvgButton()
         openButton.setIcon('open.svg')
 
-        saveButton = SvgIconPushButton()
+        saveButton = SvgButton()
         saveButton.setIcon('save.svg')
 
         lay = QHBoxLayout()
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     import sys
 
     app = QApplication(sys.argv)
-    ex = SvgIconPushButtonExample()
+    ex = SvgButtonExample()
     ex.show()
     sys.exit(app.exec_())
 ```
@@ -70,6 +70,4 @@ Sorry for the video quality.
 
 ![image](https://user-images.githubusercontent.com/55078043/153802633-5517f7ac-3d86-4d7f-b2de-40dbc10a19f8.png)
 
-Image quality is not perfect, but much better than video. Above image is slightly bigger than actual size.
-
-I wish i know how to resize the video and image which are dropped on the README.md.
+Image quality is not perfect, but much better than video. Image above is slightly bigger than actual size.
