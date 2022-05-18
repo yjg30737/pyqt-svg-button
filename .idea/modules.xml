@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pyqt_svg_icon_pushbutton.iml" filepath="$PROJECT_DIR$/.idea/pyqt_svg_icon_pushbutton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pyqt_svg_button.iml" filepath="$PROJECT_DIR$/.idea/pyqt_svg_button.iml" />
     </modules>
   </component>
 </project>

@@ -1,10 +1,9 @@
-from PyQt5.QtCore import QPropertyAnimation, QAbstractAnimation
-from PyQt5.QtGui import QColor, QPalette, QBrush, qGray
-from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget, QGraphicsOpacityEffect
+from PyQt5.QtGui import QColor, QPalette, qGray
+from PyQt5.QtWidgets import QPushButton, QGraphicsColorizeEffect, QWidget
 import absresgetter
 
 
-class SvgIconPushButton(QPushButton):
+class SvgButton(QPushButton):
     def __init__(self, base_widget: QWidget = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.__initVal(base_widget)

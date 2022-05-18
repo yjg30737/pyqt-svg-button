@@ -24,10 +24,11 @@ So i overrides the ```setIcon``` mtehod to set SVG icon with the power of CSS.
 
 ## Example
 Code Sample
+
 ```python
 from PyQt5.QtWidgets import QWidget, QApplication, QHBoxLayout
 
-from pyqt_svg_icon_pushbutton.svgIconPushButton import SvgIconPushButton
+from pyqt_svg_button.svgButton import SvgButton
 
 
 class SvgIconPushButtonExample(QWidget):
@@ -36,13 +37,13 @@ class SvgIconPushButtonExample(QWidget):
         self.__initUi()
 
     def __initUi(self):
-        newButton = SvgIconPushButton()
+        newButton = SvgButton()
         newButton.setIcon('new.svg')
 
-        openButton = SvgIconPushButton()
+        openButton = SvgButton()
         openButton.setIcon('open.svg')
 
-        saveButton = SvgIconPushButton()
+        saveButton = SvgButton()
         saveButton.setIcon('save.svg')
 
         lay = QHBoxLayout()
