@@ -3,7 +3,9 @@ PyQt button which supports svg icon
 
 Qt's `setIcon` of button widget doesn't help that much in terms of setting SVG image as an icon. It's just another good old fashioned pixmap icon. 
 
-So i overrided the method to set SVG icon with the power of CSS. 
+So i overrided the method to set SVG icon with the power of CSS.
+
+By the way, parent class of this is `QPushButton`.
 
 (the repo/package name has changed on 2022/05/18 from pyqt-svg-icon-pushbutton)
 
