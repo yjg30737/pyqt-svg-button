@@ -5,7 +5,7 @@ Qt's `setIcon` of button widget doesn't help that much in terms of setting SVG i
 
 So i overrided the method to set SVG icon with the power of CSS.
 
-By the way, parent class of this is `QPushButton`.
+By the way, parent class of this is `QPushButton`. I will update `QToolButton` of this when i'm ready to do so. 
 
 (the repo/package name has changed on 2022/05/18 from pyqt-svg-icon-pushbutton)
 
