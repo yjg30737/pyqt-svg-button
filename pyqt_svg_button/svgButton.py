@@ -6,20 +6,19 @@ import absresgetter
 class SvgButton(QPushButton):
     def __init__(self, base_widget: QWidget = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.__initVal(base_widget)
+        self.__baseWidget = base_widget
+        self.__initVal()
         self.__styleInit()
 
-    def __initVal(self, base_widget):
+    def __initVal(self):
         self.__size = self.font().pointSize() * 2
         self.__padding = self.__border_radius = self.__size // 10
         self.__background_color = 'transparent'
         self.__icon = ''
         self.__animation = ''
         self.installEventFilter(self)
-        if base_widget:
-            self.__baseWidget = base_widget
+        if self.__baseWidget:
             self.__baseWidget.installEventFilter(self)
-            self.__baseWidget.setObjectName('base_widget')
             self.__initColorByBaseWidget()
         else:
             self.__hover_color = '#DDDDDD'
@@ -104,7 +103,7 @@ class SvgButton(QPushButton):
                     effect.setStrength(1)
                     effect.setColor(QColor(150, 150, 150))
                 self.setGraphicsEffect(effect)
-        if obj.objectName() == 'base_widget':
+        if obj == self.__baseWidget:
             # catch the StyleChange event of base widget
             if e.type() == 100:
                 self.__initColorByBaseWidget()
