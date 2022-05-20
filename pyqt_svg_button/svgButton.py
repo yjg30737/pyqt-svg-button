@@ -28,6 +28,7 @@ class SvgButton(QPushButton):
 
     def __initColorByBaseWidget(self):
         self.__base_color = self.__baseWidget.palette().color(QPalette.Base)
+        self.__background_color = self.__base_color.name()
         self.__hover_color = self.__getHoverColor(self.__base_color)
         self.__pressed_color = self.__getPressedColor(self.__base_color)
         self.__checked_color = self.__getPressedColor(self.__base_color)
