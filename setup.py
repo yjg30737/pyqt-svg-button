@@ -15,7 +15,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
-    description='PyQt button which allows svg icon (not a fake low quality svg icon)',
+    description='PyQt button which supports svg icon (not a fake low quality svg icon)',
     url='https://github.com/yjg30737/pyqt-svg-button.git',
     long_description_content_type='text/markdown',
     long_description=long_description,

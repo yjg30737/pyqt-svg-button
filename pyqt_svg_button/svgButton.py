@@ -24,12 +24,14 @@ class SvgButton(QPushButton):
             self.__hover_color = '#DDDDDD'
             self.__pressed_color = '#FFFFFF'
             self.__checked_color = '#CCCCCC'
+            self.__text_color = '#AAAAAA'
 
     def __initColorByBaseWidget(self):
         self.__base_color = self.__baseWidget.palette().color(QPalette.Base)
         self.__hover_color = self.__getHoverColor(self.__base_color)
         self.__pressed_color = self.__getPressedColor(self.__base_color)
         self.__checked_color = self.__getPressedColor(self.__base_color)
+        self.__text_color = self.__getButtonTextColor(self.__base_color)
 
     def __getColorByFactor(self, base_color, factor):
         r, g, b = base_color.red(), base_color.green(), base_color.blue()
@@ -54,6 +56,18 @@ class SvgButton(QPushButton):
     def __getCheckedColor(self, base_color):
         return self.__getPressedColor(base_color)
 
+    def __getButtonTextColor(self, base_color):
+        r, g, b = base_color.red() ^ 255, base_color.green() ^ 255, base_color.blue() ^ 255
+        if r == g == b:
+            text_color = QColor(r, g, b)
+        else:
+            gray = qGray(r, g, b)
+            if gray > 255 // 2:
+                text_color = QColor(255, 255, 255)
+            else:
+                text_color = QColor(0, 0, 0)
+        return text_color.name()
+
     def __styleInit(self):
         self.__btn_style = f'''
         QPushButton
@@ -65,6 +79,7 @@ class SvgButton(QPushButton):
         background-color: {self.__background_color};
         border-radius: {self.__border_radius};
         padding: {self.__padding};
+        color: {self.__text_color};
         }}
         QPushButton:hover
         {{
