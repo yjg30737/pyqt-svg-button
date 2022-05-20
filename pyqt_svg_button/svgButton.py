@@ -39,8 +39,7 @@ class SvgButton(QPushButton):
         if gray > 255 // 2:
             color = base_color.darker(factor)
         else:
-            color = QColor(r+34, g+34, b+34)
-            color = color.lighter(factor)
+            color = base_color.lighter(factor)
         return color
 
     def __getHoverColor(self, base_color):
