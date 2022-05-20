@@ -43,12 +43,12 @@ class SvgButton(QPushButton):
         return color
 
     def __getHoverColor(self, base_color):
-        hover_factor = 130
+        hover_factor = 120
         hover_color = self.__getColorByFactor(base_color, hover_factor)
         return hover_color.name()
 
     def __getPressedColor(self, base_color):
-        pressed_factor = 140
+        pressed_factor = 130
         pressed_color = self.__getColorByFactor(base_color, pressed_factor)
         return pressed_color.name()
 
