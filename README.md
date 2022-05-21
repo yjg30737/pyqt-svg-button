@@ -9,6 +9,8 @@ By the way, parent class of this is `QPushButton`. I will update `QToolButton` o
 
 (the repo/package name has changed on 2022/05/18 from pyqt-svg-icon-pushbutton)
 
+Default background color of this is transparent.
+
 ## Requirements
 * PyQt5 >= 5.8
 
@@ -20,7 +22,7 @@ By the way, parent class of this is `QPushButton`. I will update `QToolButton` o
 * `setIcon(icon: str)` - set the icon. Icon should be a SVG file's name. This is overriding method.
 * `setPadding(padding: int)` - set the button's padding.
 * `setBorderRadius(border_radius: int)`
-* `setBackground(background=None)` - you can give `background` argument's value either 'transparent' or 6-digits or 3-digits hex color string or color's name like 'red', 'green'. As you see, default is set to `None`. If you set the value as default, background will automatically be set.
+* `setBackground(background=None)` - you can give `background` argument's value either 'transparent' or 6-digits or 3-digits hex color string or color's name like 'red', 'green'. If you don't give any arguments(`None`), background will automatically be set based on base widget's color if you give base widget argument to `SvgButton` constructor. 
 * `setAsCircle()` - set button's shape as circle.
 
 ## Included Packages
