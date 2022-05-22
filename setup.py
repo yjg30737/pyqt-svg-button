@@ -21,7 +21,6 @@ setup(
     long_description=long_description,
     install_requires=[
         'PyQt5>=5.8',
-        'pyqt-svg-abstractbutton>=0.0.1',
-        'absresgetter>=0.0.1'
+        'pyqt-svg-abstractbutton>=0.0.1'
     ]
 )
