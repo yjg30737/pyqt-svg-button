@@ -1,1 +1,2 @@
+pyqt-svg-abstractbutton>=0.0.1
 absresgetter>=0.0.1
