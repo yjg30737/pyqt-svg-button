@@ -27,7 +27,6 @@ Default background color of this is transparent.
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/pyqt-svg-abstractbutton.git">pyqt-svg-abstractbutton</a> - parent class
-* <a href="https://github.com/yjg30737/absresgetter.git">absresgetter</a>
 
 ## Example
 Code Sample
