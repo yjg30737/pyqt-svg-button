@@ -26,7 +26,7 @@ Default background color of this is transparent.
 * `setAsCircle()` - set button's shape as circle.
 
 ## Included Packages
-* <a href="https://github.com/yjg30737/pyqt-svg-abstractbutton.git">pyqt-svg-abstractbutton</a> - parent class
+* <a href="https://github.com/yjg30737/pyqt-svg-abstractbutton.git">pyqt-svg-abstractbutton</a>
 
 ## Example
 Code Sample
