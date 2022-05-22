@@ -11,6 +11,8 @@ By the way, parent class of this is `QPushButton` and <a href="https://github.co
 
 Default background color of this is transparent.
 
+If you want to use svg supporting `QToolButton`, use <a href="https://github.com/yjg30737/pyqt-svg-toolbutton.git">pyqt-svg-toolbutton</a>. 
+
 ## Requirements
 * PyQt5 >= 5.8
 
