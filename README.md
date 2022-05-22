@@ -5,7 +5,7 @@ Qt's `setIcon` of button widget doesn't help that much in terms of setting SVG i
 
 So i overrided the method to set SVG icon with the power of CSS.
 
-By the way, parent class of this is `QPushButton`. I will update `QToolButton` of this when i'm ready to do so. 
+By the way, parent class of this is `QPushButton`.
 
 (the repo/package name has changed on 2022/05/18 from pyqt-svg-icon-pushbutton)
 
@@ -26,6 +26,7 @@ Default background color of this is transparent.
 * `setAsCircle()` - set button's shape as circle.
 
 ## Included Packages
+* <a href="https://github.com/yjg30737/pyqt-svg-abstractbutton.git">pyqt-svg-abstractbutton</a> - parent class
 * <a href="https://github.com/yjg30737/absresgetter.git">absresgetter</a>
 
 ## Example
