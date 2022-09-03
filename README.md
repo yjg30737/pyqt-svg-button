@@ -82,3 +82,6 @@ Sorry for the video quality.
 ![image](https://user-images.githubusercontent.com/55078043/153802633-5517f7ac-3d86-4d7f-b2de-40dbc10a19f8.png)
 
 Image quality is not perfect, but much better than video. Image above is slightly bigger than actual size.
+
+## See Also
+<a href="https://github.com/yjg30737/pyqt-svg-toolbutton.git">pyqt-svg-toolbutton</a> - QToolButton version of this
