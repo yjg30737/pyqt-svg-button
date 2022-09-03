@@ -13,6 +13,8 @@ Default background color of this is transparent.
 
 If you want to use svg supporting `QToolButton` instead of `QPushButton`, use <a href="https://github.com/yjg30737/pyqt-svg-toolbutton.git">pyqt-svg-toolbutton</a>. 
 
+Note: Don't use this to PySide project. It doesn't take multiple inheritance well. Besides, you don't have to use this to PySide6 at all because i find that PySide6 or PyQt6(if you will) can automatically turn png into svg icon, or make it smoother. Correct me if i'm wrong.   
+
 ## Requirements
 * PyQt5 >= 5.8
 
