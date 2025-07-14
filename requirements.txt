@@ -1,2 +1,1 @@
 pyqt-svg-abstractbutton>=0.0.1
-PyQt6~=6.7.1
