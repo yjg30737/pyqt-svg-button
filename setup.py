@@ -20,7 +20,6 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_description,
     install_requires=[
-        'PyQt6>=6.7.1',
         'pyqt-svg-abstractbutton>=0.0.8'
     ]
 )
