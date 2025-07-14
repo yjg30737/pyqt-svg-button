@@ -16,7 +16,7 @@ If you want to use svg supporting `QToolButton` instead of `QPushButton`, use <a
 Note: Don't use this to PySide project. It doesn't take multiple inheritance well. Besides, you don't have to use this to PySide6 at all because i find that PySide6 or PyQt6(if you will) can automatically turn png into svg icon, or make it smoother. Correct me if i'm wrong.   
 
 ## Requirements
-* PyQt5 >= 5.8
+* PyQt6 >= 6.7.1
 
 ## Setup
 `python -m pip install pyqt-svg-button`
@@ -36,7 +36,7 @@ Note: Don't use this to PySide project. It doesn't take multiple inheritance wel
 Code Sample
 
 ```python
-from PyQt5.QtWidgets import QWidget, QApplication, QHBoxLayout
+from PyQt6.QtWidgets import QWidget, QApplication, QHBoxLayout
 
 from pyqt_svg_button.svgButton import SvgButton
 
