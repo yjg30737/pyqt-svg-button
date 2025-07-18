@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QPushButton, QWidget
+from PyQt6.QtWidgets import QPushButton, QWidget
 from pyqt_svg_abstractbutton import SvgAbstractButton
 
 
